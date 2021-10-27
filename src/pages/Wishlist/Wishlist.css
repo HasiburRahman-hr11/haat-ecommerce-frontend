@@ -1,0 +1,24 @@
+.table_wishlist td.action_col {
+    text-align: right;
+    max-width: 60px;
+}
+
+.table_wishlist .stock_col {
+    color: var(--link-hover);
+}
+
+.wl_cart_btn {
+    margin-right: 20px; 
+    white-space: nowrap;
+}
+
+@media only screen and (max-width:768px) {
+    .table_wishlist td.action_col {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .wl_cart_btn {
+        margin-right: 0;
+    }
+}

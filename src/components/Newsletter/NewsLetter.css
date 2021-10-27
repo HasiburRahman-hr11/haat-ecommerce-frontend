@@ -1,0 +1,36 @@
+.newsletter{
+    padding: 100px 0;
+    /* background: linear-gradient(rgba(78, 78, 78, 0.2), rgba(104, 103, 103, 0.2)); */
+}
+.newsletter_content{
+    max-width: 550px;
+    margin: 0 auto;
+    color: #fff;
+}
+.nl_title{
+    font-size: 28px;
+    font-family: 'Fraunces', serif;
+}
+.nl_input{
+    width: 100%;
+    height: 45px;
+    padding-left: 10px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-right: 0;
+    outline: 0;
+    border-radius: 3px 0 0 3px;
+}
+.nl_input:focus{
+    border-color: var(--link-hover);
+}
+.nl_btn{
+    background-color: var(--link-hover);
+    color: #fff;
+    max-width: 120px;
+    padding: 0 15px;
+    height: 45px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+}

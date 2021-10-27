@@ -1,0 +1,76 @@
+.login_page {
+    background-color: #f9f9f9;
+}
+
+.login_page_content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.login_tab_list {
+    border-bottom: 1px solid #ebebeb;
+}
+
+.login_tabs_item {
+    font-size: 20px;
+    padding: 5px 10px;
+    border-bottom: 1px solid transparent;
+    border-bottom-width: 2px;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: -1px;
+}
+
+.login_tabs_item.react-tabs__tab--selected {
+    border-color: var(--link-hover);
+    color: var(--link-hover);
+}
+
+
+.auth_check {
+    margin-right: 5px;
+}
+
+.auth_password_wrapper {
+    position: relative;
+}
+
+.password_icon {
+    font-size: 25px;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.auth_btn {
+    height: 40px;
+    min-width: 120px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.auth_alter_text{
+    color: #999;
+}
+.google_auth_wrapper{
+    border: 1px solid #f1f1f1;
+    height: 40px;
+    cursor: pointer;
+    max-width: 220px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.google_auth_wrapper:hover{
+    background-color: #F5F6F9;
+}
+.google_auth_wrapper span{
+    margin-left: 5px;
+}

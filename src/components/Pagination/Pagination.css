@@ -1,0 +1,28 @@
+.pagination .page_item{
+    margin: 0 5px;
+    cursor: pointer;
+}
+.pagination .page_item.disabled{
+    pointer-events: none;
+}
+.pagination .page_item.disabled .page_link{
+    color: #999;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+}
+.pagination .page_item .page_link{
+    color: #666;
+    font-size: 15px;
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+    border: 1px solid #999;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.pagination .page_item .page_link:hover,
+.pagination .page_item.active .page_link{
+    background: var(--link-hover);
+    color: #fff;
+    border-color: var(--link-hover);
+}

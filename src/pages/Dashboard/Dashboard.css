@@ -1,0 +1,52 @@
+.dashboard_tabs_item {
+    height: 50px;
+    border-bottom: 1px solid #ebebeb;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.dashboard_tabs_item.react-tabs__tab--selected,
+.dashboard_tabs_item:hover,
+.dash_tabs_icon,
+.dashbord_panel a {
+    color: var(--link-hover);
+}
+.dash_tabs_icon{
+    font-size: 25px;
+    display: none;
+    opacity: 0;
+}
+.dashboard_tabs_item.react-tabs__tab--selected .dash_tabs_icon{
+   display: inline-block;
+    opacity: 1;
+    padding-right: 5px;
+}
+
+.dashbord_panel p{
+    line-height: 21px;
+    color: #888;
+}
+.dash_panel_icon{
+    margin: 0 3px;
+}
+.dashboard_adress_card{
+    background-color: #F9F9F9;
+    padding: 20px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.dashboard_adress_card h4{
+    font-family: 'Fraunces', serif;
+    color: #666;
+}
+.dashboard_edit{
+    margin-top: 5px;
+}
+.dash_account_form .auth_input{
+    margin-top: 0;
+}
+.dash_account_form .auth_input_wrapper{
+    margin-bottom: 15px;
+}
+

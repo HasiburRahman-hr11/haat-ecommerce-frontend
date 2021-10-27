@@ -1,0 +1,45 @@
+.breadcumb {
+    height: 50px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.brc_list li {
+    margin: 0 10px;
+}
+
+.brc_list li a {
+    color: #666;
+    background-color: #ebebeb;
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.brc_list li a:hover {
+    background-color: var(--link-hover);
+    color: #fff;
+}
+
+.brc_list li:last-child a {
+    cursor: text;
+}
+
+.brc_list li:last-child a:hover {
+    color: #666;
+    background-color: #ebebeb;
+}
+
+.brc_list li a span {
+    margin-left: 3px;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+@media only screen and (max-width:768px) {
+    .breadcumb {
+        display: none;
+    }
+}

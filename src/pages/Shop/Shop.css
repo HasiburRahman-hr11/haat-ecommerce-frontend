@@ -1,0 +1,32 @@
+.shop_header{
+    height: 60px; 
+}
+.shop_result_counts{
+    color: #CFD0DB;
+    font-size: 14px;
+}
+.shop_result_counts strong{
+    color: #666;
+}
+.sort_product{
+    white-space: nowrap;
+}
+.sort_select{
+    outline: 0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    max-width: 170px;
+}
+
+@media only screen and (max-width:900px) {
+    .sidebar_lg {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .shop_header{
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}

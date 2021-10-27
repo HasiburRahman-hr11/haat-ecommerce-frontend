@@ -1,0 +1,16 @@
+.error_page{
+    padding: 100px 0;
+}
+
+.error_content h2{
+    font-size: 30px;
+    font-family: 'Fraunces', serif;
+}
+.err_btn{
+  padding: 13px 30px;
+ padding-bottom: 10px;
+  text-transform: uppercase;
+}
+.err_btn:hover{
+    color: #fff;
+}

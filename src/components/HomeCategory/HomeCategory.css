@@ -1,0 +1,60 @@
+
+.hm_cat_wrapper{
+    position: relative;
+    display: block;
+    color: #f1f1f1;
+}
+.hm_cat_wrapper:hover{
+    color: #f1f1f1;
+}
+.hm_cat_content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding-left: 30px;
+    text-transform: uppercase;
+}
+.hm_cat_subtitle{
+    font-size: 15px;
+    font-weight: 500;
+}
+.hm_cat_title{
+    font-size: 22px;
+    max-width: 150px;
+    font-weight: 600;
+}
+.hm_cat_offer{
+    font-size: 18px;
+    font-family: 'Fraunces', serif;
+}
+.hm_cat_btn{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    padding-top: 13px;
+    border: 1px solid #fff;
+}
+
+.hm_cat_overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 5px);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.hm_cat_wrapper:hover .hm_cat_overlay{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width:900px){
+    .hm_cat_item:last-child{
+        display: none;
+    }
+}

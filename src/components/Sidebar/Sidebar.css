@@ -1,0 +1,57 @@
+.sidebar_header{
+    height: 60px; 
+}
+.sidebar_header h4{
+    font-size: 18px;
+    font-family: 'Fraunces', serif;
+    color: #666;
+}
+.sidebar_accordion{
+    box-shadow: none !important;
+    
+    border-radius: 0 !important;
+}
+.sidebar_item{
+    border-top: 1px solid #ddd;
+}
+.sidebar_item:last-child{
+    border-bottom: 1px solid #ddd;
+}
+.sb_accordion_header{
+    min-height: 50px !important;
+    padding: 0 !important;
+}
+.sb_accordion_header>div{
+    margin: 0 !important;
+}
+.sidebar_title{
+    font-size: 20px;
+    font-family: 'Fraunces', serif;
+    color: #444;
+}
+.sb_accordion_content{
+    padding: 5px 0 !important;
+}
+.sidebar_list li{
+    margin-bottom: 5px;
+}
+.sidebar_list li a{
+    text-decoration: none;
+    color: #666;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+.sidebar_list li a:hover{
+    color: var(--link-hover);
+}
+.sb_item_name{
+    text-transform: capitalize;
+}
+.sb_item_count{
+    background: #f1f1f1;
+    width: 35px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px 0;
+}

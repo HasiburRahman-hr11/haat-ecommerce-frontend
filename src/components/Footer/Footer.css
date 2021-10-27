@@ -1,0 +1,111 @@
+.footer a {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--link-hover);
+}
+
+.footer_top {
+    padding: 50px 0;
+}
+
+.widget_logo {
+    font-size: 25px;
+    font-family: 'Fraunces', serif;
+}
+.footer_logo{
+    max-width: 90px;
+    object-fit: cover;
+}
+.widget_about_txt,
+.footer_copyright,
+.fb_social span,
+.widget_info_title {
+    font-size: 15px;
+    color: #777;
+}
+
+
+.footer .widget_info_num {
+    font-size: 22px;
+    color: var(--link-hover);
+}
+
+.widget_info_payment {
+    max-width: 220px;
+    object-fit: cover;
+}
+
+.widget_title {
+    font-size: 16px;
+    font-family: 'Fraunces', serif;
+}
+
+.widget_list a,
+.fb_menu a {
+    font-size: 14px;
+    color: #888;
+}
+.widget_list a{
+    padding: 3px 0;
+    display: inline-block;
+}
+
+.widget_list li {
+    padding: 3px 0;
+}
+
+.footer_bottom_wrapper {
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.fb_menu a {
+    margin: 0 10px;
+    border-bottom: 1px solid #666;
+    padding-bottom: 1px;
+}
+
+.fb_menu a:hover {
+    border-color: var(--link-hover);
+}
+
+.fb_social_list li a {
+    font-size: 19px;
+    color: var(--link-hover);
+    margin: 0 7px;
+}
+
+
+@media only screen and (max-width:900px) {
+    .widget {
+        margin-bottom: 30px;
+    }
+    .widget:last-child{
+        margin-bottom: 0;
+    }
+
+    .footer_bottom_wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .fb_menu {
+        margin-top: 10px;
+        margin-bottom: 10px !important;
+    }
+
+    .fb_social {
+        margin-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .widget_info_num {
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+}

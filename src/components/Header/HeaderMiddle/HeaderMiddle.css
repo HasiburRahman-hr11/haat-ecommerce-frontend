@@ -1,0 +1,153 @@
+.header_middle {
+    background-color: #fff;
+}
+
+.hm_left,
+.hm_center,
+.hm_right {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.mb_menu_toggler {
+    display: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.mb_toggler_icon {
+    font-size: 26px;
+}
+
+.hm_logo a,
+.hm_logo a:hover {
+    color: var(--primary-color);
+    font-family: 'Fraunces', serif;
+}
+.logo img{
+    max-width: 90px;
+    object-fit: cover;
+}
+.hm_logo span {
+    font-size: 30px;
+}
+
+.hm_search_wrapper {
+    border: 1px solid #dadada;
+    border-radius: 3px;
+}
+
+.hm_search_input {
+    width: 100%;
+    margin: 0;
+    border: none;
+    height: 40px;
+    padding: 0 15px;
+    font-family: Jost;
+    letter-spacing: -.01em;
+    background-color: transparent;
+    outline: 0;
+}
+
+.hm_search_btn {
+    height: 40px;
+    background-color: transparent;
+    color: #666;
+    max-width: 60px;
+    padding: 0 10px;
+}
+
+.hm_search_icon {
+    font-size: 25px;
+    transition: all 0.4s ease;
+}
+
+.hm_search_btn:hover .hm_search_icon {
+    color: var(--link-hover);
+}
+
+.hm_right {
+    padding-right: 25px;
+}
+
+.hm_right>div {
+    margin-left: 20px;
+    line-height: 12px;
+}
+
+.hm_right>div:hover p {
+    color: var(--link-hover);
+    transition: all 0.3s ease;
+}
+
+.hm_right p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.hm_right a {
+    color: var(--primary-color);
+    font-size: 28px;
+    position: relative;
+}
+
+.hm_right .hm_count {
+    font-size: 12px;
+    position: absolute;
+    top: -14px;
+    right: -15px;
+    background-color: var(--link-hover);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width:1200px) {
+    .hm_center {
+        display: none;
+    }
+
+    .mb_menu_toggler {
+        display: inline-block;
+    }
+    .header_middle{
+        -webkit-box-shadow: 0 3px 6px rgb(51 51 51 / 5%);
+        box-shadow: 0 3px 6px rgb(51 51 51 / 5%);
+    }
+
+    .header_middle.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 30;
+        animation: sticky 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: position 0.4s;
+        -ms-transition: position 0.4s;
+        -o-transition: position 0.4s;
+        transition: all 0.5s ease;
+        
+    }
+
+    @keyframes sticky {
+        0% {
+            transform: translateY(-60px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+}
+
+@media only screen and (max-width:350px) {
+
+    .hm_account,
+    .hm_wishlist {
+        display: none;
+    }
+}

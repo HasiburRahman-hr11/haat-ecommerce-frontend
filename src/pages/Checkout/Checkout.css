@@ -1,0 +1,164 @@
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.checkout_input{
+    margin-bottom: 15px;
+}
+.checkout_form .auth_input {
+    margin-top: 0;
+}
+
+.checkout_checkbox label {
+    margin-bottom: 0;
+    padding-left: 3px;
+}
+
+textarea.order_notes {
+    min-height: 120px;
+    padding: 10px;
+}
+
+.checkout_collapsable {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.checkout_collapsable::before {
+    display: none !important;
+}
+
+.checkout_collapsable>div {
+    padding-left: 0;
+}
+
+.checkout_toggle_label {
+    color: #888 !important;
+}
+
+.checkout_toggle_label>div {
+    margin: 20px 0 !important;
+}
+
+.checkout_shipping_details {
+    padding: 0 !important;
+}
+
+.checkout_summery {
+    padding: 30px 20px;
+    background-color: #F9F9F9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkout_summery_title {
+    padding-bottom: 10px;
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+.checkout_summery_table th {
+    text-align: left;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 5px;
+    color: #444;
+    font-weight: 500;
+}
+
+.checkout_summery_table th:last-child,
+.checkout_summery_table td:last-child {
+    text-align: right;
+}
+.checkout_summery_table td{
+    font-size: 15px;
+    color: #666;
+}
+.checkout_summery_table .summery_product td {
+    height: 50px;
+    border-bottom: 1px dotted #ddd;
+}
+.checkout_summery_table .summery_subtotal td,
+.checkout_summery_table .summery_shipping td,
+.checkout_summery_table .summery_tax td{
+    padding: 5px 0;
+}
+.checkout_summery_table .summery_subtotal td,
+.checkout_summery_table .summery_total td{
+    font-size: 17px;
+    padding-top: 15px;
+    color: #444;
+    font-weight: 600;
+}
+.checkout_summery_table .summery_tax td{
+    padding-bottom: 15px;
+}
+.checkout_summery_table .summery_total td{
+    color: var(--link-hover);
+    border-top: 1px solid #bbb;
+}
+
+.payment_toggle_button{
+    position: relative;
+    color: #444;
+}
+.payment_toggle_button::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #dadada;
+    right: auto;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+    margin-right: 10px;
+}
+.payment_toggle_button::after{
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    border-radius: 50%;
+    background-color: transparent;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    visibility: visible;
+    opacity: 1;
+}
+.Mui-expanded .payment_toggle_button::after{
+    background-color: var(--link-hover);
+}
+.Mui-expanded .payment_toggle_button::before{
+border-color:  var(--link-hover);
+}
+.Mui-expanded .payment_toggle_button{
+    color: var(--link-hover);
+}
+.checkout_toggle_label.checkout_payment_toggle{
+    min-height: 33px !important;
+}
+.checkout_toggle_label.checkout_payment_toggle>div {
+    margin: 0 0 !important;
+}
+
+.payment_description{
+    color: #888;
+    font-size: 14px;
+    padding-left: 10px;
+    line-height: 20px;
+}

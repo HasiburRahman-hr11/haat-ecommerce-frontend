@@ -1,0 +1,100 @@
+.sp_reviews h3,
+.sp_reply h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+}
+
+.sp_reviews h3 {
+    padding-bottom: 15px;
+}
+
+.sp_reviews_wrapper {
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.sp_reviews_wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.sp_reviews_wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.sp_review_item {
+    margin-top: 15px;
+    background-color: #f1f1f1;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.sp_review_item:first-child {
+    margin-top: 0;
+}
+
+.review_meta {
+    margin-right: 15px;
+}
+
+.review_meta h4 {
+    font-size: 17px;
+}
+
+.rm_rattings {
+    font-size: 15px !important;
+}
+
+.sp_review_item p {
+    margin-bottom: 0;
+}
+
+.reply_ratting_wrapper>span {
+    color: #444;
+    font-size: 16px;
+}
+
+.reply_rattings {
+    font-size: 18px !important;
+}
+
+.reply_input {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 11px 10px;
+}
+
+.reply_input:focus {
+    border-color: var(--link-hover);
+}
+
+textarea.reply_input {
+    min-height: 150px;
+}
+
+.reply_btn {
+    padding: 12px 25px;
+    background-color: #faae93;
+    color: #fff;
+    min-width: 100px;
+    font-weight: normal;
+    font-size: 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reply_checkbox label {
+    margin-left: 5px;
+}
+
+@media only screen and (max-width:600px) {
+    .sp_review_item {
+        flex-direction: column;
+    }
+
+    .review_meta {
+        margin-bottom: 15px;
+    }
+}

@@ -40,7 +40,7 @@ const AccountPanel = () => {
         if (errors.isValidated) {
             try {
                 setLoading(true);
-                const { data } = await axios.put(`/api/users/edit/${user._id}`, formData, {
+                const { data } = await axios.put(`https://hidden-crag-34912.herokuapp.com/api/users/edit/${user._id}`, formData, {
                     headers: {
                         token: user.token
                     }

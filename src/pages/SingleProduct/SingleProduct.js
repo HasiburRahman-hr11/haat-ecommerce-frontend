@@ -23,7 +23,7 @@ const SingleProduct = () => {
         const fetchProduct = async () => {
             setLoading(true);
             try {
-                const { data } = await axios.get(`/api/products/${params.id}`);
+                const { data } = await axios.get(`https://hidden-crag-34912.herokuapp.com/api/products/${params.id}`);
                 setProduct(data);
 
                 getRelatedProducts(data);

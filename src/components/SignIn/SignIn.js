@@ -47,7 +47,7 @@ const SignIn = () => {
             
             setLoading(true);
             try {
-                const res = await axios.post('/api/auth/signin', signInValues);
+                const res = await axios.post('https://hidden-crag-34912.herokuapp.com/api/auth/signin', signInValues);
                 if (res.data.accessToken) {
                     setSignInValues({
                         email: '',

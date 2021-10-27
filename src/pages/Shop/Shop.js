@@ -44,7 +44,7 @@ const Shop = () => {
         const fetchProducts = async () => {
             setLoading(true);
             try {
-                const { data } = await axios.get(`/api/products?page=${currentPage}&&limit=${limit}`);
+                const { data } = await axios.get(`https://hidden-crag-34912.herokuapp.com/api/products?page=${currentPage}&&limit=${limit}`);
 
                 setProducts(data.products);
                 setTotalPage(data.totalPage);

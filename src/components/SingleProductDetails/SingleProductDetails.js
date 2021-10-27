@@ -70,7 +70,7 @@ const SingleProductDetails = ({ product }) => {
 
             if (size) cartData.size = size
             if (color) cartData.color = color
-            const { data } = await axios.post(`/api/cart/add/${user._id}`, cartData, {
+            const { data } = await axios.post(`https://hidden-crag-34912.herokuapp.com/api/cart/add/${user._id}`, cartData, {
                 headers: {
                     token: user.token
                 }

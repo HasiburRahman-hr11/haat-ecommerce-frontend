@@ -23,7 +23,7 @@ const OrdersPanel = () => {
         const fetchUserOrders = async () => {
             setLoading(true);
             try {
-                const { data } = await axios.get(`/api/orders/user/${user._id}`, {
+                const { data } = await axios.get(`https://hidden-crag-34912.herokuapp.com/api/orders/user/${user._id}`, {
                     headers: {
                         token: user.token
                     }

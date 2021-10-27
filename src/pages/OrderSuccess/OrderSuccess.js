@@ -27,7 +27,7 @@ const OrderSuccess = () => {
             const productsArray = [];
             setLoading(true);
             try {
-                const currentOrder = await axios.get(`/api/orders/${orderId}`)
+                const currentOrder = await axios.get(`https://hidden-crag-34912.herokuapp.com/api/orders/${orderId}`)
                 setOrder(currentOrder.data);
 
                 currentOrder.data.products.forEach(product => {
@@ -38,7 +38,7 @@ const OrderSuccess = () => {
 
                 setProductIds(cartIds)
                 if (cartIds.length > 0) {
-                    const { data } = await axios.post('/api/products/cartProducts', { cartIds });
+                    const { data } = await axios.post('https://hidden-crag-34912.herokuapp.com/api/products/cartProducts', { cartIds });
 
 
                     currentOrder.data.products.forEach(product => {

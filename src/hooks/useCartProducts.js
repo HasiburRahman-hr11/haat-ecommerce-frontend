@@ -25,7 +25,7 @@ const useCartProducts = () => {
                 try {
                     setLoading(true);
 
-                    const { data } = await axios.post('/api/products/cartProducts', { cartIds });
+                    const { data } = await axios.post('https://hidden-crag-34912.herokuapp.com/api/products/cartProducts', { cartIds });
 
                     setLoading(false);
 

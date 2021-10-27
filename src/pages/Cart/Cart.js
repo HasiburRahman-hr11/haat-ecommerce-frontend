@@ -70,7 +70,7 @@ const Cart = () => {
     const handleUpdateCart = async () => {
         if (user.token) {
             try {
-                const { data } = await axios.put(`/api/cart/update/${user._id}`,
+                const { data } = await axios.put(`https://hidden-crag-34912.herokuapp.com/api/cart/update/${user._id}`,
                     { items: carts },
                     {
                         headers: {
@@ -92,7 +92,7 @@ const Cart = () => {
     const handleRemoveCart = async (product) => {
         if (user.token) {
             try {
-                const { data } = await axios.put(`/api/cart/removeSingle/${user._id}`,
+                const { data } = await axios.put(`https://hidden-crag-34912.herokuapp.com/api/cart/removeSingle/${user._id}`,
                     { productId: product._id },
                     {
                         headers: {

@@ -7,7 +7,7 @@ const useProducts = () => {
     useEffect(() => {
         const getAllProducts = async () => {
             try {
-                const { data } = await axios.get('/api/products');
+                const { data } = await axios.get('https://hidden-crag-34912.herokuapp.com/api/products');
                 setProducts(data.products);
                 setLoading(false);
             } catch (error) {

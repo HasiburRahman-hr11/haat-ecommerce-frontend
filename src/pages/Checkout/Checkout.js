@@ -124,10 +124,10 @@ const Checkout = () => {
 
         if (isValid) {
             try {
-                const res = await axios.post('/api/orders/create', orderData);
+                const res = await axios.post('https://hidden-crag-34912.herokuapp.com/api/orders/create', orderData);
                 if (res.status === 201) {
                     if (user.token) {
-                        const { data } = await axios.delete(`/api/cart/remove/${user._id}`, {
+                        const { data } = await axios.delete(`https://hidden-crag-34912.herokuapp.com/api/cart/remove/${user._id}`, {
                             headers: {
                                 token: user.token
                             }

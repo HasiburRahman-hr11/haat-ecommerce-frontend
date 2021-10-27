@@ -23,7 +23,7 @@ const SingleProductReview = ({ product, setProduct }) => {
         } else {
             try {
                 setLoading(true);
-                const { data } = await axios.put(`/api/products/review/${product._id}`, { rating, ...formData });
+                const { data } = await axios.put(`https://hidden-crag-34912.herokuapp.com/api/products/review/${product._id}`, { rating, ...formData });
 
                 console.log(data);
                 setProduct(data);

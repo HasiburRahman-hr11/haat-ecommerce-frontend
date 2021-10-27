@@ -50,7 +50,7 @@ const CategoryProducts = () => {
         const fetchProductsByCat = async () => {
             setLoading(true);
             try {
-                const { data } = await axios.get(`/api/products/category/${params.title}?page=${currentPage}&&limit=${limit}`);
+                const { data } = await axios.get(`https://hidden-crag-34912.herokuapp.com/api/products/category/${params.title}?page=${currentPage}&&limit=${limit}`);
 
                 setProducts(data.products);
                 setTotalPage(data.totalPage);

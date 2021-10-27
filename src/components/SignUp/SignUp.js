@@ -47,7 +47,7 @@ const SignUp = () => {
 
             setLoading(true);
             try {
-                const res = await axios.post('/api/auth/signup', signUpValues);
+                const res = await axios.post('https://hidden-crag-34912.herokuapp.com/api/auth/signup', signUpValues);
                 if (res.data.email) {
                     setSignUpValues({
                         firstName: '',

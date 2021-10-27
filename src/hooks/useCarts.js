@@ -14,7 +14,7 @@ const useCarts = () => {
       let myCart;
       if (user.token) {
         try {
-          const { data } = await axios.get(`/api/cart/${user._id}` , {
+          const { data } = await axios.get(`https://hidden-crag-34912.herokuapp.com/api/cart/${user._id}` , {
             headers:{
               token:user.token
             }

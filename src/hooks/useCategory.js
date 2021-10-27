@@ -9,7 +9,7 @@ const useCategory = () => {
             setLoading(true);
             try {
                 const { data } = await axios.get('https://hidden-crag-34912.herokuapp.com/api/category');
-                setCategories(data);
+                setCategories(data.categories);
                 setLoading(false);
             } catch (error) {
                 console.log(error);

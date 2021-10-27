@@ -143,7 +143,7 @@ const Product = ({ product }) => {
                     <Link
                         to={`/product/${product._id}`}
                         className="product_thumbnail d-block">
-                        <img src={process.env.REACT_APP_SERVER_URL + product?.thumbnail} alt={product?.name} />
+                        <img src={ product?.thumbnail} alt={product?.name} />
                     </Link>
                     <div className="product_action d-flex align-items-center justify-content-center">
                         <ul className="mb-0 ps-0 d-flex justify-content-center">

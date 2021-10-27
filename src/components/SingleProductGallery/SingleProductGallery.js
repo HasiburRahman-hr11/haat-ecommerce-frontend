@@ -16,7 +16,7 @@ const SingleProductGallery = ({ product }) => {
         >
             <div className="single_product_gallery">
                 <figure className="sp_main_image">
-                    <img src={process.env.REACT_APP_SERVER_URL + product.thumbnail} alt={product.name} ref={productThumb} />
+                    <img src={ product.thumbnail} alt={product.name} ref={productThumb} />
                 </figure>
                 {!product.inStock && (
                     <span className="sp_stock_out">Stock Out</span>
@@ -25,11 +25,11 @@ const SingleProductGallery = ({ product }) => {
             {product.gallery.length > 0 && (
                 <div className="sp_zoom_gallery d-flex align-items-center">
                     <button className="zoom_gallery_item">
-                        <img src={process.env.REACT_APP_SERVER_URL + product.thumbnail} alt="" onClick={galleryHandler} />
+                        <img src={ product.thumbnail} alt="" onClick={galleryHandler} />
                     </button>
                     {product.gallery.map((image, ind) => (
                         <button key={ind} className="zoom_gallery_item">
-                            <img src={process.env.REACT_APP_SERVER_URL + image} alt="" onClick={galleryHandler} />
+                            <img src={ image} alt="" onClick={galleryHandler} />
                         </button>
                     ))}
                 </div>

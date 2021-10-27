@@ -66,7 +66,7 @@ const Wishlist = () => {
                                     <tr key={product._id} className="table_item">
                                         <td className="product_col">
                                             <div className="d-flex align-items-center">
-                                                <img src={process.env.REACT_APP_SERVER_URL + product.thumbnail} alt="" />
+                                                <img src={ product.thumbnail} alt="" />
                                                 <p className="table_product_title mb-0">
                                                     <Link
                                                         to={`/product/${product._id}`}

@@ -3,8 +3,6 @@ import { CartContext } from "../Context/CartContext";
 import axios from 'axios';
 
 const useCartProducts = () => {
-
-    const [loading, setLoading] = useState(false);
     const { carts } = useContext(CartContext);
     const [cartProducts, setCartProducts] = useState([]);
 
@@ -23,11 +21,10 @@ const useCartProducts = () => {
             // Fetch Products by using cartIds
             if (cartIds.length > 0) {
                 try {
-                    setLoading(true);
+
 
                     const { data } = await axios.post('https://hidden-crag-34912.herokuapp.com/api/products/cartProducts', { cartIds });
 
-                    setLoading(false);
 
                     carts.forEach(item => {
                         const cartProduct = data.find(p => p._id === item._id)
@@ -53,7 +50,6 @@ const useCartProducts = () => {
                     setCartProducts(productsArray);
 
                 } catch (error) {
-                    setLoading(false);
                     console.log(error);
                 }
             }
@@ -65,7 +61,7 @@ const useCartProducts = () => {
 
     }, [carts]);
 
-    return [cartProducts, loading]
+    return [cartProducts]
 }
 
 export default useCartProducts;

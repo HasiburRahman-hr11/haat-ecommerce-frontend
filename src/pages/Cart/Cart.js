@@ -17,13 +17,13 @@ import BreadCumb from '../../components/BreadCumb/BreadCumb';
 import { CartContext } from '../../Context/CartContext';
 import { AuthContext } from '../../Context/AuthContext';
 import useCartProducts from '../../hooks/useCartProducts';
-// import Loading from '../../components/Loading/Loading';
+import Loading from '../../components/Loading/Loading';
 
 const Cart = () => {
 
     const { user } = useContext(AuthContext)
     const [cartProducts] = useCartProducts();
-    const { carts, setCarts } = useContext(CartContext);
+    const { carts, setCarts, loading } = useContext(CartContext);
 
     const cartItems = cartProducts.reduce((p, c) => p + c.quantity, 0);
     const subtotal = cartProducts.reduce((p, c) => p + c.price * c.quantity, 0);
@@ -116,139 +116,140 @@ const Cart = () => {
 
     return (
         <>
-            {/* {loading ? (<Loading />) : (
-                
-            )} */}
-            <div className="main">
-                <PageBanner title="Shopping Cart" />
-                <BreadCumb label="Cart" Icon={<AiOutlineShoppingCart />} />
-                <div className="cart_wrapper py-5">
-                    <Container>
-                        {carts.length > 0 ? (
-                            <Grid
-                                container
-                                spacing={3}
-                            >
+            {loading ? (
+                <Loading />
+            ) : (
+                <div className="main">
+                    <PageBanner title="Shopping Cart" />
+                    <BreadCumb label="Cart" Icon={<AiOutlineShoppingCart />} />
+                    <div className="cart_wrapper py-5">
+                        <Container>
+                            {carts.length > 0 ? (
                                 <Grid
-                                    item
-                                    lg={9}
-                                    md={8}
-                                    sm={12}
-                                    xs={12}
+                                    container
+                                    spacing={3}
                                 >
-                                    <table className="table_cart w-100 table_responsive">
-                                        <thead>
-                                            <tr>
-                                                <th>Product</th>
-                                                <th>Price</th>
-                                                <th>Quantity</th>
-                                                <th>Total</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
+                                    <Grid
+                                        item
+                                        lg={9}
+                                        md={8}
+                                        sm={12}
+                                        xs={12}
+                                    >
+                                        <table className="table_cart w-100 table_responsive">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Total</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
 
-                                        <tbody>
-                                            {
-                                                cartProducts.map((product, index) => (
-                                                    <tr key={index} className="table_item">
-                                                        <td className="product_col">
-                                                            <div className="d-flex align-items-center">
-                                                                <img src={ product.thumbnail} alt="" />
-                                                                <p className="table_product_title mb-0">
-                                                                    <Link to={`/product/${product._id}`}
-                                                                    >{product.title}</Link>
-                                                                </p>
-                                                            </div>
-                                                        </td>
-                                                        <td className="price_col">
-                                                            ${product.price}
-                                                        </td>
-                                                        <td className="qty_col">
-                                                            <div className="sp_quantity_box d-flex align-items-center">
-                                                                <button
-                                                                    className="cart_dec qty_btn"
-                                                                    onClick={() => qtyDecreamanet(product.quantity, index)}
-                                                                >-</button>
-                                                                <input
-                                                                    type="number"
-                                                                    name="qty"
-                                                                    className="qty_input"
-                                                                    value={product.quantity}
-                                                                    onChange={(event) => qtyChangeHandler(event, index)}
-                                                                />
-                                                                <button
-                                                                    className="cart_inc qty_btn"
-                                                                    onClick={() => qtyIncreamanet(product.quantity, index)}
-                                                                >+</button>
-                                                            </div>
-                                                        </td>
-                                                        <td className="total_col">
-                                                            ${(product.quantity * product.price).toFixed(2)}
+                                            <tbody>
+                                                {
+                                                    cartProducts.map((product, index) => (
+                                                        <tr key={index} className="table_item">
+                                                            <td className="product_col">
+                                                                <div className="d-flex align-items-center">
+                                                                    <img src={product.thumbnail} alt="" />
+                                                                    <p className="table_product_title mb-0">
+                                                                        <Link to={`/product/${product._id}`}
+                                                                        >{product.title}</Link>
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                            <td className="price_col">
+                                                                ${product.price}
+                                                            </td>
+                                                            <td className="qty_col">
+                                                                <div className="sp_quantity_box d-flex align-items-center">
+                                                                    <button
+                                                                        className="cart_dec qty_btn"
+                                                                        onClick={() => qtyDecreamanet(product.quantity, index)}
+                                                                    >-</button>
+                                                                    <input
+                                                                        type="number"
+                                                                        name="qty"
+                                                                        className="qty_input"
+                                                                        value={product.quantity}
+                                                                        onChange={(event) => qtyChangeHandler(event, index)}
+                                                                    />
+                                                                    <button
+                                                                        className="cart_inc qty_btn"
+                                                                        onClick={() => qtyIncreamanet(product.quantity, index)}
+                                                                    >+</button>
+                                                                </div>
+                                                            </td>
+                                                            <td className="total_col">
+                                                                ${(product.quantity * product.price).toFixed(2)}
 
-                                                        </td>
-                                                        <td
-                                                            className="cart_close"
-                                                            onClick={() => handleRemoveCart(product)}
-                                                        ><AiOutlineCloseCircle className="cart_close_icon" /></td>
-                                                    </tr>
-                                                ))
-                                            }
-                                        </tbody>
-                                    </table>
+                                                            </td>
+                                                            <td
+                                                                className="cart_close"
+                                                                onClick={() => handleRemoveCart(product)}
+                                                            ><AiOutlineCloseCircle className="cart_close_icon" /></td>
+                                                        </tr>
+                                                    ))
+                                                }
+                                            </tbody>
+                                        </table>
 
-                                    <div className="cart_actions mt-3">
-                                        <button
-                                            onClick={handleUpdateCart}
-                                            className="update_cart btn btn-primary align-items-center"
-                                        >
-                                            Update Cart
-                                            <BsArrowRepeat className="update_cart_icon" />
-                                        </button>
+                                        <div className="cart_actions mt-3">
+                                            <button
+                                                onClick={handleUpdateCart}
+                                                className="update_cart btn btn-primary align-items-center"
+                                            >
+                                                Update Cart
+                                                <BsArrowRepeat className="update_cart_icon" />
+                                            </button>
 
-                                    </div>
-                                </Grid>
-                                <Grid
-                                    item
-                                    lg={3}
-                                    md={4}
-                                    sm={12}
-                                    xs={12}
-                                >
-                                    <div className="cart_summary">
-                                        <h4 className="cart_summary_title">Cart Total ({cartItems} {cartItems > 1 ? 'items' : 'item'})</h4>
-                                        <div className="cart_summary_items">
-                                            <div className="cs_item cs_subtotal d-flex justify-content-between">
-                                                <span>Subtotal: </span>
-                                                <span>${subtotal.toFixed(2)}</span>
-                                            </div>
-                                            <div className="cs_item cs_shipping d-flex justify-content-between">
-                                                <span>Shipping: </span>
-                                                <span>${shipping}</span>
-                                            </div>
-                                            <div className="cs_item cs_tax d-flex justify-content-between">
-                                                <span>Tax: </span>
-                                                <span>${tax.toFixed(2)}</span>
-                                            </div>
-                                            <div className="cs_item cs_total d-flex justify-content-between">
-                                                <span>Total: </span>
-                                                <span>${total.toFixed(2)}</span>
-                                            </div>
                                         </div>
+                                    </Grid>
+                                    <Grid
+                                        item
+                                        lg={3}
+                                        md={4}
+                                        sm={12}
+                                        xs={12}
+                                    >
+                                        <div className="cart_summary">
+                                            <h4 className="cart_summary_title">Cart Total ({cartItems} {cartItems > 1 ? 'items' : 'item'})</h4>
+                                            <div className="cart_summary_items">
+                                                <div className="cs_item cs_subtotal d-flex justify-content-between">
+                                                    <span>Subtotal: </span>
+                                                    <span>${subtotal.toFixed(2)}</span>
+                                                </div>
+                                                <div className="cs_item cs_shipping d-flex justify-content-between">
+                                                    <span>Shipping: </span>
+                                                    <span>${shipping}</span>
+                                                </div>
+                                                <div className="cs_item cs_tax d-flex justify-content-between">
+                                                    <span>Tax: </span>
+                                                    <span>${tax.toFixed(2)}</span>
+                                                </div>
+                                                <div className="cs_item cs_total d-flex justify-content-between">
+                                                    <span>Total: </span>
+                                                    <span>${total.toFixed(2)}</span>
+                                                </div>
+                                            </div>
 
-                                        <Link to="/checkout" className="checkout_btn btn_hover btn btn-outline-primary mt-3">Proceed to Checkout</Link>
-                                    </div>
-                                    <Link
-                                        className="continue_shopping btn btn-outline-primary mt-2 btn_hover align-items-center justify-content-center"
-                                        to="/shop"
-                                    >Continue Shopping <BsArrowRight /></Link>
+                                            <Link to="/checkout" className="checkout_btn btn_hover btn btn-outline-primary mt-3">Proceed to Checkout</Link>
+                                        </div>
+                                        <Link
+                                            className="continue_shopping btn btn-outline-primary mt-2 btn_hover align-items-center justify-content-center"
+                                            to="/shop"
+                                        >Continue Shopping <BsArrowRight /></Link>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        ) : (
-                            <Error content="Your Cart is Empty!" />
-                        )}
-                    </Container>
+                            ) : (
+                                <Error content="Your Cart is Empty!" />
+                            )}
+                        </Container>
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     );
 };

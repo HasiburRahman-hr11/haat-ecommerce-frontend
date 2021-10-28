@@ -221,7 +221,7 @@ const SignUp = () => {
                     </button>
                 </div>
 
-                <div className="auth_alter mt-2 text-center">
+                {/* <div className="auth_alter mt-2 text-center">
                     <p className="auth_alter_text">or</p>
 
                     <div className="google_auth_wrapper d-flex align-items-center justify-content-center">
@@ -230,7 +230,7 @@ const SignUp = () => {
                             <span>Sign Up With Google</span>
                         </p>
                     </div>
-                </div>
+                </div> */}
             </form>
 
 

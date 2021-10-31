@@ -14,7 +14,8 @@ const Loading = () => {
             backgroundColor:'#F0ECE9',
             display:'flex',
             alignItems:'center',
-            justifyContent:'center'
+            justifyContent:'center',
+            zIndex:100
         }}
         >
             <CircularProgress color="inherit" />

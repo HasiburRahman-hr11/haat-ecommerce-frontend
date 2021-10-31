@@ -19,11 +19,7 @@ const useCarts = () => {
               token: user.token
             }
           });
-          if (data.products.length !== 0) {
-            setCarts(data.products);
-          } else {
-            setCarts(lsCarts);
-          }
+          setCarts(data.products);
         } catch (error) {
           console.log(error)
         }

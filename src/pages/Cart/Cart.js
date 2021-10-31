@@ -123,10 +123,8 @@ const Cart = () => {
             <PageBanner title="Shopping Cart" />
             <BreadCumb label="Cart" Icon={<AiOutlineShoppingCart />} />
             <div className="cart_wrapper py-5">
-                {loading && (
-                    <div className="cart_loading">
-
-                    </div>
+                {loading && carts.length > 0 && (
+                    <div className="cart_loading"> </div>
                 )}
                 <Container>
                     {carts.length > 0 ? (
@@ -209,7 +207,7 @@ const Cart = () => {
                                     >
                                         Update Cart
                                         <BsArrowRepeat className={updateCartLoading ? `update_cart_icon loading` : 'update_cart_icon'}
-                                         />
+                                        />
                                     </button>
 
                                 </div>

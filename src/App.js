@@ -29,8 +29,8 @@ const App = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    jwtLogout(user.token);
-  }, [user.token])
+    jwtLogout();
+  }, []);
 
   return (
     <Router>

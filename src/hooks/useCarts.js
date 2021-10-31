@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import { getOldCart } from "../utils/cartHandler";
+import { getLocalStorageCarts } from "../utils/cartHandler";
 import axios from 'axios';
 
 const useCarts = () => {
@@ -11,7 +11,7 @@ const useCarts = () => {
 
   useEffect(() => {
     const getCart = async () => {
-      let myCart;
+      const lsCarts = getLocalStorageCarts();
       if (user.token) {
         try {
           const { data } = await axios.get(`https://hidden-crag-34912.herokuapp.com/api/cart/${user._id}`, {
@@ -19,13 +19,16 @@ const useCarts = () => {
               token: user.token
             }
           });
-          setCarts(data.products);
+          if (data.products.length !== 0) {
+            setCarts(data.products);
+          } else {
+            setCarts(lsCarts);
+          }
         } catch (error) {
           console.log(error)
         }
       } else {
-        myCart = getOldCart();
-        setCarts(myCart);
+        setCarts(lsCarts);
       }
 
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 import { AiOutlineCloseCircle, AiOutlineShoppingCart } from 'react-icons/ai';
-import { getOldCart } from '../../utils/cartHandler';
+import { getLocalStorageCarts } from '../../utils/cartHandler';
 import { BsArrowRepeat, BsArrowRight } from 'react-icons/bs';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -112,7 +112,7 @@ const Cart = () => {
         } else {
             const updatedCart = carts.filter(item => item._id !== product._id);
             localStorage.setItem('haat-cart', JSON.stringify(updatedCart));
-            const newCarts = getOldCart();
+            const newCarts = getLocalStorageCarts();
             setCarts(newCarts);
             successNotify('Item Removed From Cart.')
         }

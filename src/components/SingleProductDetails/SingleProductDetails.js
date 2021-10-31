@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './SingleProductDetails.css';
 import { AiOutlineShoppingCart, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { getOldCart, setNewCartToLs } from '../../utils/cartHandler';
+import { getLocalStorageCarts, setNewCartToLs } from '../../utils/cartHandler';
 
 import { successNotify } from '../../utils/tost-notify';
 import { getOldWish, setNewWishToLs } from '../../utils/wishlistHandler';
@@ -81,7 +81,7 @@ const SingleProductDetails = ({ product }) => {
 
         } else {
             setNewCartToLs(product, qty);
-            const newCart = getOldCart();
+            const newCart = getLocalStorageCarts();
             setCarts(newCart);
             setQty(1);
             successNotify('Product Added to Cart.');

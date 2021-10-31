@@ -1,5 +1,5 @@
 
-export const getOldCart = () => {
+export const getLocalStorageCarts = () => {
     const oldCart = JSON.parse(localStorage.getItem('haat-cart')) || [];
     return oldCart;
 }
@@ -15,7 +15,7 @@ export const setNewCartToLs = (product, quantity) => {
         }
     }
 
-    const oldCart = getOldCart();
+    const oldCart = getLocalStorageCarts();
     if (oldCart?.length > 0) {
         oldCart.forEach(item => {
             if (item._id === product._id) {

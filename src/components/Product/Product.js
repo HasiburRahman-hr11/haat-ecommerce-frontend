@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { getOldWish, setNewWishToLs } from '../../utils/wishlistHandler';
 import 'react-toastify/dist/ReactToastify.css';
 import { successNotify } from '../../utils/tost-notify';
-import { getOldCart, setNewCartToLs } from '../../utils/cartHandler';
+import { getLocalStorageCarts, setNewCartToLs } from '../../utils/cartHandler';
 
 import Box from '@mui/material/Box';
 import Backdrop from '@mui/material/Backdrop';
@@ -67,7 +67,7 @@ const Product = ({ product }) => {
     const handleAddtoCart = () => {
         if (!isCarted) {
             setNewCartToLs(product, 1);
-            const newCart = getOldCart();
+            const newCart = getLocalStorageCarts();
             setCarts(newCart);
             setIsCarted(true)
             successNotify('Product Added to Cart.')

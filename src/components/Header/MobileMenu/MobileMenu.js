@@ -93,7 +93,7 @@ const MobileMenu = ({ mobileMenu, setMobileMenu, categories }) => {
                             <ul className="mb-0 ps-0 mb_cat_menu" onClick={() => setMobileMenu(false)}>
                                 {sortedCategories.map(category => (
                                     <li className="mb_cat_item" key={category.title}>
-                                        <Link to="#">{category.title}</Link>
+                                        <Link to={`/category/${category.title}`}>{category.title}</Link>
                                     </li>
                                 ))}
                             </ul>

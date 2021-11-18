@@ -406,15 +406,7 @@ const Checkout = () => {
                                 />
                                 {billingError.email && <p className="auth_error">{billingError.email}</p>}
                             </div>
-                            <div className="checkout_checkbox  d-flex align-items-center">
-                                <input
-                                    type="checkbox"
-                                    name="billingCreateAccount"
-                                    id="billingCreateAccount"
-                                    className="custom_checkbox"
-                                />
-                                <label className="auth_label" htmlFor="billingCreateAccount">Create an Account?</label>
-                            </div>
+                            
 
 
                             <Accordion
@@ -735,83 +727,6 @@ const Checkout = () => {
                                         </AccordionDetails>
 
                                     </Accordion>
-
-                                    <Accordion
-                                        expanded={expandedPayment === 'bankPayment'} onChange={handlePaymentToggle('bankPayment')}
-                                        className="checkout_collapsable"
-                                    >
-                                        <AccordionSummary
-                                            className="checkout_toggle_label checkout_payment_toggle w-100"
-                                            aria-controls="shippingAddress-content"
-                                            onClick={() => setPaymentMethod('Direct bank transfer')}
-                                        >
-                                            <div className="checkout_payment_header">
-                                                <span className="payment_toggle_button d-block w-100">
-                                                    Direct Bank Transfer
-                                                </span>
-                                            </div>
-
-
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <p className="payment_description">
-                                                Payment method is not implemented yet. But you can select a method. It will be added to the order data.
-                                                &#128522; &#128522;
-                                            </p>
-                                        </AccordionDetails>
-
-                                    </Accordion>
-
-                                    <Accordion
-                                        expanded={expandedPayment === 'checkPayment'} onChange={handlePaymentToggle('checkPayment')}
-                                        className="checkout_collapsable"
-                                    >
-                                        <AccordionSummary
-                                            className="checkout_toggle_label checkout_payment_toggle w-100"
-                                            aria-controls="shippingAddress-content"
-                                            onClick={() => setPaymentMethod('Check payment')}
-                                        >
-                                            <div className="checkout_payment_header">
-                                                <span className="payment_toggle_button d-block w-100">
-                                                    Check Payment
-                                                </span>
-                                            </div>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <p className="payment_description">
-                                                Payment method is not implemented yet. But you can select a method. It will be added to the order data.
-                                                &#128522; &#128522;
-                                            </p>
-                                        </AccordionDetails>
-
-                                    </Accordion>
-
-
-
-                                    <Accordion
-                                        expanded={expandedPayment === 'paypalPayment'} onChange={handlePaymentToggle('paypalPayment')}
-                                        className="checkout_collapsable"
-                                    >
-                                        <AccordionSummary
-                                            className="checkout_toggle_label checkout_payment_toggle w-100"
-                                            aria-controls="shippingAddress-content"
-                                            onClick={() => setPaymentMethod('PayPal')}
-                                        >
-                                            <div className="checkout_payment_header">
-                                                <span className="payment_toggle_button d-block w-100">
-                                                    PayPal
-                                                </span>
-                                            </div>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <p className="payment_description">
-                                                Payment method is not implemented yet. But you can select a method. It will be added to the order data.
-                                                &#128522; &#128522;
-                                            </p>
-                                        </AccordionDetails>
-
-                                    </Accordion>
-
 
                                     <Accordion
                                         expanded={expandedPayment === 'cardPayment'} onChange={handlePaymentToggle('cardPayment')}

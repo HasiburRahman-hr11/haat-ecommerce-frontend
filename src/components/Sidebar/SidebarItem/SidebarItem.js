@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const SidebarItem = ({ title, list }) => {
     const [expanded, setExpanded] = React.useState(false);
+    console.log(list);
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
